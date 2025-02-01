@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import reactCompiler from 'eslint-plugin-react-compiler';
 import react from 'eslint-plugin-react';
+import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
 
@@ -27,6 +28,7 @@ export default tseslint.config(
     },
     extends: [
       js.configs.recommended,
+      importPlugin.flatConfigs.recommended,
       ...tseslint.configs.recommended,
       eslintPluginPrettier,
     ],
@@ -47,6 +49,11 @@ export default tseslint.config(
       'prefer-const': 'error',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      'import/order': 'error',
+      'import/first': 'error',
+      'import/newline-after-import': 'off',
+      'import/no-duplicates': 'error',
+      'import/no-unresolved': 'off',
     },
     settings: {
       react: {

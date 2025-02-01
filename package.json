@@ -9,9 +9,9 @@
     "preview": "npm run build && vite preview",
     "prepare": "husky",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src/ --fix",
     "prettier": "prettier --check --ignore-unknown src/",
     "prettier:fix": "prettier --write --ignore-unknown src/",
-    "lint:fix": "eslint src/ --fix",
     "format:fix": "npm run lint:fix && npm run prettier:fix"
   },
   "dependencies": {
@@ -49,5 +49,13 @@
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5",
     "yup": "^1.6.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run format:fix"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
