@@ -11,7 +11,7 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 export default tseslint.config(
-  { ignores: ['dist', 'node-modules', 'build'] },
+  { ignores: ['dist', 'node_modules', 'build'] },
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -47,9 +47,14 @@ export default tseslint.config(
       'no-multiple-empty-lines': 'error',
       'no-multi-spaces': 'error',
       'prefer-const': 'error',
-      'simple-import-sort/imports': 'error',
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [['^\\u0000', '^@?\\w', '^[^.]', '^\\.']],
+        },
+      ],
       'simple-import-sort/exports': 'error',
-      'import/order': 'error',
+      'import/order': 'off',
       'import/first': 'error',
       'import/newline-after-import': 'off',
       'import/no-duplicates': 'error',
