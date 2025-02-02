@@ -1,5 +1,6 @@
 .results-section {
   width: 100%;
+  max-height: 500px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
