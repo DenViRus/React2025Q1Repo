@@ -45,6 +45,20 @@ export default tseslint.config(
       'unused-imports/no-unused-vars': 'error',
       'no-console': 'warn',
       'no-multiple-empty-lines': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {
+          accessibility: 'explicit',
+          overrides: {
+            accessors: 'explicit',
+            constructors: 'off',
+            methods: 'explicit',
+            properties: 'explicit',
+            parameterProperties: 'explicit',
+          },
+        },
+      ],
       'no-multi-spaces': 'error',
       'prefer-const': 'error',
       'simple-import-sort/imports': [

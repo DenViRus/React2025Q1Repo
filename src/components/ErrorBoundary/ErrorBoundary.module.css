@@ -1,0 +1,35 @@
+.boundary-box {
+  min-width: 200px;
+  width: 30%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin: auto;
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.boundary-box .boundary-heading {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: red;
+}
+
+.boundary-box .boundary-button {
+  padding: 5px 10px;
+  font-size: 1.6rem;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.boundary-box .boundary-button:hover {
+  background-color: green;
+}
